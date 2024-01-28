@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 0 80px;
+}
+button{
+    cursor: pointer;
+}
+.darkMode{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(77, 213, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: -280px;
+    left: 39vw;
+    gap: 15px;
+    z-index: 199;
+}
+.darkMode::before{
+    content: '';
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+#light,
+#dark{
+    width: 50px;
+    height: 50px;;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px gray;
+    z-index: 1;
+    margin-top: 250px;
+}
+#light{
+    background-color: white;
+    border: none;
+}
+#light:active{
+    background-color: rgb(83, 83, 83);
+}
+#dark:active{
+    background-color: rgb(179, 179, 179);
+}
+
+/* Fin de el cambia Modos y Inicio de la barra de navegacion */
+
+.navBar{
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+.navleft{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+.navleft input{
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+.navleft label img{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    cursor: pointer;
+}
+.navleft input:checked ~ ul{
+    display: block;
+}
+
+ul{
+    display: none;
+    width: 40%;
+    height: 40vh;
+    margin-top: 50vh;
+    background-color: rgb(211, 211, 211);
+
+}
+ul div{
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+ul div img{
+    width: 35px;
+    margin-top: -15px;
+    margin-left: 20px;
+    top: 0;
+}
+ul h2{
+    font-size: 2em;
+}
+ul a{
+    cursor: pointer;
+}
+ul li:hover{
+    border-bottom: 3px solid gray;
+    padding-bottom: 2px;
+}
+ul li{
+    list-style-type: square;
+    margin: 10px;
+    margin-left: 50px;
+    font-size: 1em;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 2px;
+}
+
+.navRight{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navRight button{
+    border: none;
+    cursor: pointer;
+}
+.navRight img{
+    width: 35px;
+    height: 35px;
+}
+#logo{
+    width: 7rem; height: 4rem ;
+}
+
+/* Inicio del seccion y  fin del la barra de navegacion*/
+
+section{
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+}
+.caption{
+    width: 30%;
+    height: inherit;
+    padding-top: 8rem;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.caption h2{
+    font-size: 4.8em;
+}
+.price{
+    font-size: 2.5rem;
+    margin: 15px 0;
+}
+.caption p{
+    font-size: 1.5rem;
+}
+.add{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.add button{
+    display: flex;
+    width: 12em;
+    height: 70px;
+    border-radius: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    box-shadow: 0 0 5px black;
+}
+.add button:active{
+    background-color: gray;
+    border: 1px solid black;
+}
+.add > img{
+    width: 35px;
+    height: 35px;
+}
+
+
+/* Inicio de la imagen */
+.imagen{
+    width: 40%;
+    height: 800px;
+}
+.minimalismo{
+    width: 80%;
+    margin: 0 auto;
+    height: 700px;
+    border-radius: 380px 380px 0 0;
+    background-color:rgb(255, 87, 25);
+    position: relative;
+}
+.imagen img{
+    position: absolute;
+    z-index: 99;
+}
+.imagen img:nth-of-type(1){
+    width: 800px;
+    bottom: 0;
+    left: -10rem;
+}
+.imagen img:nth-of-type(2){
+    width: 600px;
+    bottom: 0;
+    left: -2rem;
+    animation-name: lata;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes lata {
+    0%{
+        transform: translateY(60px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(60px);
+    }
+}
+
+/*  Fin de la seccion del medio e inico de el area de la informacion */
+
+
+.info{
+    width: 30%;
+    padding-top: 8rem;
+}
+
+.arrows{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+}
+.arrows button{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50px;
+    border: none;
+}
+.arrows button img{
+    width: 2rem;
+}
+.arrows button:nth-of-type(1){
+    margin-right: 1rem;
+}
+.description{
+    margin-top:  150px;
+    padding-left: 50px;
+}
+.tags{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+.tags div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.tags div img{
+    width: 30px;
+    cursor: pointer;
+}
+.tags div input{
+    display: none;
+}
+    
+.tags p{
+    display: none;
+    position: absolute;
+    margin-top: 100px;
+    padding-left: 20px;
+    line-height: 120%;
+}
+.tags input:checked ~ p{
+    display: block;
+}
+
+.tags h3{
+    font-size: 1.5rem;
+}
